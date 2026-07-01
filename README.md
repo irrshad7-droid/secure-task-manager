@@ -22,6 +22,18 @@ Rather than relying on the common, tightly-coupled MVC (Model-View-Controller) p
 
 ---
 
+## 🌐 Live Demo
+
+### Frontend
+https://secure-task-manager-delta.vercel.app
+
+### Backend API
+https://secure-task-manager-k4og.onrender.com
+
+### Swagger Documentation
+https://secure-task-manager-k4og.onrender.com/api-docs
+
+
 ## ✨ Features
 
 - ✅ **JWT Authentication**: Secure, stateless access and refresh token flows.
@@ -40,6 +52,12 @@ Rather than relying on the common, tightly-coupled MVC (Model-View-Controller) p
 - ✅ **Global Error Handling**: Intercepts and transforms MongoDB errors into client-friendly responses.
 - ✅ **Repository Pattern**: Abstracts all database calls away from business logic.
 - ✅ **Graceful Shutdown**: Safe termination handling for `SIGTERM` signals.
+## 🚀 Deployment
+
+- **Frontend:** Vercel
+- **Backend:** Render
+- **Database:** MongoDB Atlas
+- **CI/CD:** GitHub Actions
 
 ---
 
