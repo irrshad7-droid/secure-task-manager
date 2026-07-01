@@ -253,6 +253,8 @@ export default function App() {
         <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <Login setAuth={setIsAuthenticated} />} />
         <Route path="/register" element={isAuthenticated ? <Navigate to="/" /> : <Register setAuth={setIsAuthenticated} />} />
         <Route path="/" element={isAuthenticated ? <Dashboard setAuth={setIsAuthenticated} /> : <Navigate to="/login" />} />
+        <Route path="/dashboard" element={<Navigate to="/" />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
   );
