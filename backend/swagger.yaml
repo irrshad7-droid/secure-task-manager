@@ -1,0 +1,89 @@
+openapi: 3.0.0
+info:
+  title: Secure Task Manager API
+  description: Backend API for managing tasks
+  version: 1.0.0
+servers:
+  - url: /api/v1
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+paths:
+  /auth/register:
+    post:
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '201':
+          description: Created
+  /auth/login:
+    post:
+      summary: Login user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: OK
+  /tasks:
+    get:
+      summary: Get all tasks
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: status
+          schema:
+            type: string
+        - in: query
+          name: priority
+          schema:
+            type: string
+        - in: query
+          name: search
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Create a task
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+      responses:
+        '201':
+          description: Created
