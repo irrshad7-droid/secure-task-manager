@@ -32,3 +32,9 @@ jobs:
 
     - name: Run Integration Tests
       run: npm test
+      env:
+        NODE_ENV: test
+        PORT: 5000
+        MONGODB_URI: mongodb://localhost:27017/dummy_test_db
+        JWT_SECRET: super_secret_dummy_jwt_key_for_testing
+        JWT_EXPIRES_IN: 15m
