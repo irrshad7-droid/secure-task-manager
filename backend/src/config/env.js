@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const requiredEnvs = ['NODE_ENV', 'PORT', 'MONGODB_URI', 'JWT_SECRET', 'JWT_EXPIRES_IN'];
+const requiredEnvs = ['NODE_ENV', 'MONGODB_URI', 'JWT_SECRET', 'JWT_EXPIRES_IN'];
 
 for (const env of requiredEnvs) {
   if (!process.env[env]) {
@@ -11,7 +11,7 @@ for (const env of requiredEnvs) {
 
 module.exports = {
   env: process.env.NODE_ENV,
-  port: parseInt(process.env.PORT, 10),
+  port: parseInt(process.env.PORT || '5000', 10),
   mongoUri: process.env.MONGODB_URI,
   jwt: {
     secret: process.env.JWT_SECRET,
